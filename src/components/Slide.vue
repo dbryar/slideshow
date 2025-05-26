@@ -10,7 +10,11 @@
         <span>🎤</span>
         <span v-html="renderedSpeakerNote"></span>
       </div>
+      <div v-if="slide.link" class="link-button">
+        <button @click="openLink">👉🏻 Open Link</button>
+      </div>
     </div>
+    <!-- Closing tag for .slide-content -->
   </div>
 </template>
 
@@ -85,6 +89,11 @@ const renderedSpeakerNote = computed(() => markdown(slide.value.speakerNote))
 function goNext() {
   if (slideIndex.value < slides.length - 1) {
     router.push({ name: "Slide", params: { slideIndex: slideIndex.value + 1 } })
+  }
+}
+function openLink() {
+  if (slide.value.link) {
+    router.push(slide.value.link)
   }
 }
 </script>
@@ -226,6 +235,42 @@ function goNext() {
   display: flex;
   align-items: flex-start;
   gap: 0.7em;
+}
+.link-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.link-button button {
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.link-button button:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transform: scale(1.05);
+}
+
+.link-button button {
+  padding: 10px 20px;
+  background-color: rgba(0, 123, 255, 0.4);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.link-button button:hover {
+  background-color: #0056b3;
 }
 @media (max-width: 600px) {
   .slide-content {

@@ -1,20 +1,29 @@
 <template>
   <div class="task-list">
-    <h2>📋 Task List</h2>
-    <ul>
+    <div class="header">
+      <div class="subtitle">
+        <h2>Task List</h2>
+      </div>
+      <div class="task-form">
+        <form @submit.prevent="submitTask">
+          <input v-model="newTaskName" type="text" placeholder="Enter task name" required />
+          <button type="submit">➕ Add Task</button>
+        </form>
+      </div>
+    </div>
+    <ul class="task-table">
       <li v-for="task in tasks" :key="task.id" @click="$emit('open-task', task.id)" class="task-item">
-        <span>🆔 {{ task.id }}</span> | <span>📌 {{ task.name }}</span> |
-        <span :class="{ completed: task.completed }">
+        <span class="column icon">🆔</span>
+        <span class="column">{{ task.id }}</span>
+        <span class="column icon">📌</span>
+        <span class="column">{{ task.name }}</span>
+        <span class="column status" :class="{ completed: task.completed }">
           {{ task.completed ? "✅ Completed" : "⏳ Pending" }}
         </span>
-        |
-        <span>📅 {{ task.dateCompleted || "N/A" }}</span>
+        <span class="column icon">📅</span>
+        <span class="column">{{ task.dateCompleted || "N/A" }}</span>
       </li>
     </ul>
-    <form @submit.prevent="submitTask">
-      <input v-model="newTaskName" type="text" placeholder="Enter task name" required />
-      <button type="submit">➕ Add Task</button>
-    </form>
   </div>
 </template>
 
@@ -54,10 +63,46 @@ export default defineComponent({
 <style scoped>
 .task-list {
   margin-top: 20px;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.subtitle {
+  flex: 0;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a90e2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  padding-left: 3rem;
+}
+.task-form {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 3rem;
+}
+.task-form {
+  display: flex;
+  gap: 10px;
+}
+.task-table {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .task-item {
-  cursor: pointer;
-  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -67,21 +112,29 @@ export default defineComponent({
 .task-item:hover {
   background-color: #f0f8ff;
 }
-.completed {
+.column {
+  flex: 1;
+  text-align: left;
+  font-size: 1.2rem;
+}
+.icon {
+  flex: 0;
+  width: 20px;
+  text-align: center;
+}
+.status.completed {
   color: green;
   font-weight: bold;
 }
-form {
-  margin-top: 10px;
-}
 input {
-  padding: 5px;
-  margin-right: 10px;
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 button {
-  padding: 5px 10px;
+  margin-left: 1.5rem;
+  padding: 10px 15px;
   background-color: #007bff;
   color: white;
   border: none;

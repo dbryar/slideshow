@@ -10,6 +10,12 @@ const routes: Array<RouteRecordRaw> = [
       slideIndex: Number(route.params.slideIndex) || 0,
     }),
   },
+  {
+    path: "/example",
+    name: "Todo App",
+    component: () => import("./example/TodoApp.vue"),
+    props: true,
+  },
 ]
 
 const router = createRouter({

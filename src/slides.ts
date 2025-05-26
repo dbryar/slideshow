@@ -5,6 +5,7 @@ export type Slide = {
   content?: string
   visual?: string
   speakerNote?: string
+  link?: string // Optional link for slides with external navigation
 }
 
 const slides: Slide[] = [
@@ -182,22 +183,24 @@ Example strategy → https://github.com/dbryar/rooles
     speakerNote: "Documentation is of such importantance for both human and AI collaborators.",
   },
   {
-    title: "Live Demo: Roo Code in Action (6 mins)",
-    header: "Live Demo - Agentic Refactoring with Roo Code",
+    title: "Live Demo: Roo Code in Action",
+    header: "Building Features with Agentic LLMs",
     visual: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80",
     content: `
-Goal: "Update all references to processData(input) to processData(input, options)"
+**Demo Steps:**
+1. Launch the Todo app in a browser tab.
+   - Click "Run Demo" to open the app.
+   - Add a few tasks to showcase its current functionality.
+2. Switch to VS Code and input the following prompt into Roo Code:
+   - "Add a priority dropdown to tasks with options: High, Medium, Low. Save the priority in the task model."
+3. Refresh the Todo app to see the new feature in action.
+   - Verify the priority dropdown works as expected.
 
-**Demo Flow:**
-- Open a small repo with processData(input) used in multiple files.
-- Launch Roo Code agent in VS Code.
-- “Update processData to accept a second argument options, default to empty object if omitted.”
-- Let it plan → watch file access → see the diff preview.
-- Accept changes.
-- Run tests / verify in-app.
+**Goal:** Highlight how Roo Code simplifies feature development through natural language prompts.
     `,
     speakerNote: `Notice how it discovered references, refactored usage, and respected your code style.
     No need to touch more than a single file.`,
+    link: "/example", // Link to the Todo app route
   },
   {
     title: "Model Context Protocol (MCP)",
