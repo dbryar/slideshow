@@ -11,7 +11,7 @@
         <span v-html="renderedSpeakerNote"></span>
       </div>
       <div v-if="slide.link" class="link-button">
-        <button @click="openLink">👉🏻 Open Link</button>
+        <button @click="openLink($event)">👉🏻 Open Link</button>
       </div>
     </div>
     <!-- Closing tag for .slide-content -->
@@ -74,7 +74,8 @@ function markdown(text: string = ""): string {
     .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
     .replace(/\*(.*?)\*/g, "<i>$1</i>")
     .replace(/`([^`]+)`/g, "<code>$1</code>")
-    .replace(/\n- (.*)/g, "<li>$1</li>")
+    .replace(/\n(\d+)\.\s(.*)/g, '<li class="numbered-item" data-number="$1">$2</li>')
+    .replace(/(<br>)?\n\s*-\s*(.*)/g, '<li class="bullet-item">$2</li>')
     .replace(/\n/g, "<br>")
     .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
 }
@@ -91,9 +92,10 @@ function goNext() {
     router.push({ name: "Slide", params: { slideIndex: slideIndex.value + 1 } })
   }
 }
-function openLink() {
+function openLink(event: MouseEvent) {
+  event.stopPropagation()
   if (slide.value.link) {
-    router.push(slide.value.link)
+    window.open(slide.value.link, "_blank")
   }
 }
 </script>
@@ -238,6 +240,7 @@ function openLink() {
 }
 .link-button {
   position: absolute;
+  z-index: 10;
   top: 20px;
   right: 20px;
 }
@@ -271,6 +274,35 @@ function openLink() {
 
 .link-button button:hover {
   background-color: #0056b3;
+}
+.numbered-item,
+.bullet-item {
+  list-style: none;
+  margin-left: 2rem;
+
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: block;
+}
+
+.bullet-item {
+  padding-left: 2rem;
+}
+
+.numbered-item::before {
+  content: attr(data-number) ".";
+  position: absolute;
+  left: -2rem;
+  color: #7ee787;
+  font-weight: 700;
+}
+
+.bullet-item::before {
+  content: "•";
+  position: absolute;
+  left: -0rem;
+  color: #7ee787;
+  font-weight: 700;
 }
 @media (max-width: 600px) {
   .slide-content {

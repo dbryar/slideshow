@@ -129,7 +129,7 @@ AI is a tool to boost your productivity, not a threat to your job.
     content: `
 | Level      | What It Is                       | Example Use                   |
 |------------|----------------------------------|-------------------------------|
-| One-shot   | Single prompt, one reply         | Define a TypeScript Interface from this JSON"|
+| One-shot   | Single prompt, one reply         | “Define a TypeScript Interface from this JSON" |
 | Chat-based | Stateful, back-and-forth context | “Help me write a Bash script to launch a Docker container” |
 | Agentic    | Goal-directed, uses tools/files  | “Fix all input param mismatches for the modified methods in this Class” |
 
@@ -143,7 +143,7 @@ Agentic LLMs can plan, use tools, and work across files—true automation.
     visual: "https://images.unsplash.com/photo-1461344577544-4e5dc9487184?auto=format&fit=crop&w=900&q=80",
     content: `
 🤖 Claude or ChatGPT (copy/paste)
-🦾 GitHub Copilot (code completions, test/fix/explain)
+🦾 GitHub Copilot (code completions, test / fix / explain)
 💬 Copilot Chat (contextual feedback)
 🛠️ Roo Code (generative evaluating agentic loops)
 📦 Model variety: OpenAI, Claude, Mistral, Gemini, etc.
@@ -189,17 +189,15 @@ Example strategy → https://github.com/dbryar/rooles
     content: `
 **Demo Steps:**
 1. Launch the Todo app in a browser tab.
-   - Click "Run Demo" to open the app.
    - Add a few tasks to showcase its current functionality.
 2. Switch to VS Code and input the following prompt into Roo Code:
-   - "Add a priority dropdown to tasks with options: High, Medium, Low. Save the priority in the task model."
+   - "read all the files in @/src/example and understand the todo app. Add a priority dropdown to tasks with options: High, Medium, Low. Save the priority in the task model and update the test to include this new feature"
 3. Refresh the Todo app to see the new feature in action.
    - Verify the priority dropdown works as expected.
-
 **Goal:** Highlight how Roo Code simplifies feature development through natural language prompts.
     `,
     speakerNote: `Notice how it discovered references, refactored usage, and respected your code style.
-    No need to touch more than a single file.`,
+    No need to touch a single file.`,
     link: "/example", // Link to the Todo app route
   },
   {
@@ -227,17 +225,18 @@ Example strategy → https://github.com/dbryar/rooles
 - Use Roo Code to experience real-world workflows.
 - Document everything your agent might need to see.
 - MCP is the future of discoverability.
-
-Prompt fluency and tooling awareness are modern dev skills. Let's lead, not lag.
+Prompt fluency and tooling awareness are modern dev skills. **Let's lead, not lag**.
     `,
-    speakerNote: "Encourage the team to embrace prompt-based workflows and keep learning.",
+    speakerNote: "Our whole team needs to embrace prompt-based workflows and keep learning.",
   },
   {
     title: "Q&A",
     header: "Questions, Concerns, Ideas?",
     visual: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
     content: `
-Thanks for watching my latest Ted Talk. Like 👍 and subscribe ✅ if you found this useful or want to see more cool ways to spend less time at work, working.
+Thanks for attending and/or watching my latest Ted Talk.
+
+Like 👍 and subscribe ✅ if you found this useful or want to see more cool ways to spend less time at work, working.
     `,
   },
 ]
