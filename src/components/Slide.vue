@@ -69,15 +69,19 @@ function markdown(text: string = ""): string {
   })
 
   // Other markdown
-  return text
-    .replace(/^> (.*)$/gm, "<blockquote>$1</blockquote>")
-    .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
-    .replace(/\*(.*?)\*/g, "<i>$1</i>")
-    .replace(/`([^`]+)`/g, "<code>$1</code>")
-    .replace(/\n(\d+)\.\s(.*)/g, '<li class="numbered-item" data-number="$1">$2</li>')
-    .replace(/(<br>)?\n\s*-\s*(.*)/g, '<li class="bullet-item">$2</li>')
-    .replace(/\n/g, "<br>")
-    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
+  return (
+    text
+      .replace(/^> (.*)$/gm, "<blockquote>$1</blockquote>")
+      .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
+      // _word_ → <em>word</em> (italics, not inside __ or **)
+      .replace(/(^|[^\w])_([^\s_][^_]*[^\s_])_([^\w]|$)/g, "$1<em>$2</em>$3")
+      .replace(/\*(.*?)\*/g, "<i>$1</i>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>")
+      .replace(/\n(\d+)\.\s(.*)/g, '<li class="numbered-item" data-number="$1">$2</li>')
+      .replace(/(<br>)?\n\s*-\s*(.*)/g, '<li class="bullet-item">$2</li>')
+      .replace(/\n/g, "<br>")
+      .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>')
+  )
 }
 
 const router = useRouter()

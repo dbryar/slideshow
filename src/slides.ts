@@ -22,6 +22,18 @@ Welcome! Today we'll explore how programming has evolved and how you can use AI 
     speakerNote: "The emphasis of todays is understanding that AI tools empower developers, not replace them.",
   },
   {
+    title: "AI Tools Won't Replace You",
+    header: "You're Not Competing with AI—You're Augmenting With It",
+    visual: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80",
+    content: `
+> “AI won't replace developers.<br><br> Developers who use AI will replace those who don't.”
+AI is a tool to boost your productivity, not a threat to your job.
+    `,
+    speakerNote: `Quote me on this. Compare to the adoption of IDEs, version control, or Stack Overflow.
+    _Vibe Coding_ is not "cheating". Using the tools at your disposal effectively is what sets you apart.
+    `,
+  },
+  {
     title: "A Brief History of Programming Interfaces",
     header: "From Punch Cards to Prompts",
     visual: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
@@ -95,7 +107,8 @@ Example (Java):
 System.out.println("Hello, world!");
 \`\`\`
     `,
-    speakerNote: "Compilers and managed runtimes improved reliability and performance.",
+    speakerNote: `Compilers and managed runtimes improved reliability and performance.
+    Modern code is 100% abstracted from hardware, allowing developers to focus on logic and design.`,
   },
   {
     title: "Prompt-Based Programming",
@@ -113,16 +126,6 @@ Example:
     speakerNote: "Prompt-based tools let developers work at a higher level of abstraction.",
   },
   {
-    title: "AI Tools Won't Replace You",
-    header: "You're Not Competing with AI—You're Augmenting With It",
-    visual: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80",
-    content: `
-> “AI won't replace developers.<br><br> Developers who use AI will replace those who don't.”
-AI is a tool to boost your productivity, not a threat to your job.
-    `,
-    speakerNote: "Quote me on this. Compare to the adoption of IDEs, version control, or Stack Overflow.",
-  },
-  {
     title: "3 Levels of LLM Usage in Dev Work",
     header: "From Prompts to Agents",
     visual: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=900&q=80",
@@ -136,6 +139,49 @@ AI is a tool to boost your productivity, not a threat to your job.
 Agentic LLMs can plan, use tools, and work across files—true automation.
     `,
     speakerNote: "Understand the difference between simple prompting and agentic workflows.",
+  },
+  {
+    title: "One-Shot LLM Responses",
+    header: "Single Prompt, Single Response",
+    visual: "https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=900&q=80",
+    content: `
+A one-shot LLM call is a single prompt with no memory of previous interactions.
+- Fastest, simplest, and stateless.
+- Best for quick code generation, explanations, or conversions.
+
+**Example:**
+"Convert this JSON to a TypeScript interface."
+    `,
+    speakerNote: "One-shot is like a search query—no context, just input and output.",
+  },
+  {
+    title: "Contextual LLM Responses",
+    header: "Conversational, Context-Aware",
+    visual: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80",
+    content: `
+Contextual (chat-based) LLM calls maintain a conversation history.
+- Supports back-and-forth, iterative problem solving.
+- Remembers previous prompts and responses for richer interactions.
+
+**Example:**
+"Help me debug this function."
+"Here's the error message I got."
+    `,
+    speakerNote: "Contextual LLMs are like a chat—each message builds on the last.",
+  },
+  {
+    title: "Agentic LLM Responses",
+    header: "Goal-Directed, Tool-Using Agents",
+    visual: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80",
+    content: `
+Agentic LLMs can plan, use tools, and operate over multiple steps.
+- Can read/write files, call APIs, and chain actions.
+- Useful for complex tasks: refactoring, multi-file edits, or automated workflows.
+
+**Example:**
+"Find all TODOs in the codebase and generate a summary report."
+    `,
+    speakerNote: "Agentic LLMs act like junior developers—autonomous, tool-using, and goal-driven.",
   },
   {
     title: "LLM Tools in VS Code",
@@ -152,7 +198,7 @@ Agentic LLMs can plan, use tools, and work across files—true automation.
 Each tool serves different needs—exploration, debugging, rewriting, or full transformation.
 Each has strengths and weaknesses.
     `,
-    speakerNote: "Experiment with different tools. Each has strengths/weaknesses, speed/accuracy.",
+    speakerNote: "Experiment with different tools. Each has strengths/weaknesses, speed/accuracy, and cost.",
   },
   {
     title: "Best Practices for Prompting",
@@ -213,7 +259,8 @@ Example strategy → https://github.com/dbryar/rooles
 - Soon, APIs must support MCP or they'll be ignored by agents.
 - Enables querying across Confluence, GitHub, OpenAPI, S3, etc.
     `,
-    speakerNote: "MCP is becoming the glue between LLM agents and everything we know. It's metadata that makes tools discoverable and usable.",
+    speakerNote: `MCP is becoming the glue between LLM agents and everything we know. It's metadata that makes tools discoverable and usable.
+    MCP is a topic for another day, but it's crucial for agentic workflows, and something I would recommend you start thinking about now.`,
   },
   {
     title: "Final Takeaways",
@@ -237,6 +284,9 @@ Prompt fluency and tooling awareness are modern dev skills. **Let's lead, not la
 Thanks for attending and/or watching my latest Ted Talk.
 
 Like 👍 and subscribe ✅ if you found this useful or want to see more cool ways to spend less time at work, working.
+    `,
+    speakerNote: `This presentation and all its supporting materials are available https://github.com/dbryar/slideshow
+    99% of the content shown here today was generated by AI, with human curation and editing, using Roo Code.
     `,
   },
 ]
