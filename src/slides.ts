@@ -8,13 +8,14 @@ export type Slide = {
   link?: string // Optional link for slides with external navigation
 }
 
+const now = new Date()
 const slides: Slide[] = [
   {
     title: "Programming in the Age of Prompts",
     subtitle: "Using Agentic LLMs in VS Code to Accelerate Development",
     content: `
 Presented by: Daniel Bryar
-Date: 28 May 2025
+Date: ${now.toLocaleDateString("en-AU")}
 
 Welcome! Today we'll explore how programming has evolved and how you can use AI to boost your coding performance. We'll demystify prompt-based development and show how natural language is now a core developer skill.
     `,
