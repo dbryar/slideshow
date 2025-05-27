@@ -260,8 +260,7 @@ Example strategy → https://github.com/dbryar/rooles
 - Soon, APIs must support MCP or they'll be ignored by agents.
 - Enables querying across Confluence, GitHub, OpenAPI, S3, etc.
     `,
-    speakerNote: `MCP is becoming the glue between LLM agents and everything we know. It's metadata that makes tools discoverable and usable.
-    MCP is a topic for another day, but it's crucial for agentic workflows, and something I would recommend you start thinking about now.`,
+    speakerNote: `MCP is becoming the glue between LLM agents and everything we know. It's metadata that makes tools discoverable and usable. This is a topic for another day, but it's something I would recommend you start learning about now.`,
   },
   {
     title: "Final Takeaways",
