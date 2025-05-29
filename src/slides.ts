@@ -20,7 +20,7 @@ Date: ${now.toLocaleDateString("en-AU")}
 Welcome! Today we'll explore how programming has evolved and how you can use AI to boost your coding performance. We'll demystify prompt-based development and show how natural language is now a core developer skill.
     `,
     visual: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
-    speakerNote: "The emphasis of todays is understanding that AI tools empower developers, not replace them.",
+    speakerNote: "The emphasis of today's is understanding that AI tools empower developers, not replace them.",
   },
   {
     title: "AI Tools Won't Replace You",
@@ -227,7 +227,7 @@ Prompting is a skill—practice improves results!
 Good documentation helps both your team and your AI tools.
 Example strategy → https://github.com/dbryar/rooles
     `,
-    speakerNote: "Documentation is of such importantance for both human and AI collaborators.",
+    speakerNote: "Documentation is of such importance for both human and AI collaborators.",
   },
   {
     title: "Live Demo: Roo Code in Action",
